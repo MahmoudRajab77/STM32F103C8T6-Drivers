@@ -1,6 +1,10 @@
-#define SET_BIT(port,bit) (port |= (1<<bit))
-#define CLR_BIT(port,bit) (port &= (~(1<<bit)))
-#define TOGGLE_BIT(port,bit) (port ^= (1<<bit))
+#ifndef _BIT_MATH_H
+#define _BIT_MATH_H
 
-#define GET_BIT(port,bit) (((port) >> (bit)) & 0x01)
+#define SET_BIT(VAR,BITNO) (VAR) |=  (1 << (BITNO))
+#define CLR_BIT(VAR,BITNO) (VAR) &= ~(1 << (BITNO))
+#define TOG_BIT(VAR,BITNO) (VAR) ^=  (1 << (BITNO))
+#define GET_BIT(VAR,BITNO) (((VAR) >> (BITNO)) & 0x01)
 
+
+#endif
